@@ -20,7 +20,7 @@ export const useFilterDataHook = () => {
   });
   // eslint-disable-next-line default-case
   switch (state.sortType) {
-    case SortType.DESCENDING: {
+    case SortType.ASCENDING: {
       // eslint-disable-next-line default-case
       switch (state.sortBy) {
         case "id": {
@@ -78,7 +78,7 @@ export const useFilterDataHook = () => {
       }
       break;
     }
-    case SortType.ASCENDING: {
+    case SortType.DESCENDING: {
       // eslint-disable-next-line default-case
       switch (state.sortBy) {
         case "id": {
@@ -96,6 +96,12 @@ export const useFilterDataHook = () => {
         case "calories": {
           filteredSnacks = filteredSnacks.sort((a, b) => {
             return b.calories - a.calories;
+          });
+          break;
+        }
+        case "product_weight": {
+          filteredSnacks = filteredSnacks.sort((a, b) => {
+            return parseInt(b.product_weight) - parseInt(a.product_weight);
           });
           break;
         }

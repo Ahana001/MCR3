@@ -53,7 +53,6 @@
 .RESET {
   font-size: 1.6rem;
   padding: 1rem;
-  border-radius: 0.36rem;
   border: 0.1rem solid;
   cursor: pointer;
   align-self: flex-end;
